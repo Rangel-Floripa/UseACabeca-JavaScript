@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Prequalificando carros</title>
+    <script src="cars.js" charset="utf-8"></script>
+    <script>
+      function prequal(car) {
+        if (car.mileage > 10000) {
+          return false;
+        } else if (car.year > 1960){
+          return false;
+        }
+        return true;
+      }
+
+      for (var i = 0; i < frota.length; i++) {
+        car = frota[i]
+        var worthALook = prequal(car);
+        var text = car.make + " " + car.model
+        if (worthALook) {
+          console.log("You gotta check out this " + text);
+        } else {
+          console.log("You should really pass on the " + text);
+        }
+      }
+      fiat.drive()
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
