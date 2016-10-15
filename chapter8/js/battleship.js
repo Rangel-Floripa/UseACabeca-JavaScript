@@ -48,6 +48,13 @@ var model = {
     {locations: ["10", "11", "12"], hits: ["", "", ""]}
   ],
 
+  allShipsIsSunk: function() {
+    if (this.shipsSunk === this.numShips){
+      return true;
+    }
+    return false;
+  },
+
   isSunk: function(ship) {
     for (var i = 0; i < this.shiptLength; i++) {
       if (ship.hits[i] !== "hit") {
@@ -75,5 +82,25 @@ var model = {
     view.displayMiss(guess);
     view.displayMessage("You missed");
     return false;
+  }
+};
+
+var controller = {
+
+  guesses: 0,
+
+  processGuess: function(guess) {
+    if (model.allShipsIsSunk()){
+      alert("All ships are sunk!");
+      return null;
+    }
+    var location = parseGuess(guess);
+    if (location) {
+      this.guesses++;
+      var hit = model.fire(location);
+      if (hit && model.shipsSunk === model.numShips) {
+        view.displayMessage("You sank all my batlleships, in " + this.guesses + " guesses");
+      }
+    }
   }
 };
