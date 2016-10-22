@@ -17,7 +17,8 @@
       function init() {
         var images = document.getElementsByTagName("img");
         for (var i = 0; i < images.length; i++) {
-          images[i].onclick = showAnswer;
+          images[i].onmouseover = showAnswer;
+          images[i].onmouseout = reblur;
         }
       }
 
@@ -26,6 +27,15 @@
 
         var name = image.id;
         name = "images/" + name + ".jpg";
+        image.src = name;
+
+        // setTimeout(reblur, 2000, image);
+      }
+
+      function reblur(obj) {
+        var image = obj.target;
+        var name = image.id;
+        name = "images/" + name + "blur.jpg";
         image.src = name;
       }
     </script>
