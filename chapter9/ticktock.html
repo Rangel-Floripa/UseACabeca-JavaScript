@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tick Tock</title>
+    <script>
+      var tick = true;
+      var times = 0;
+      function ticker() {
+        if (tick) {
+          console.log("Tick");
+          tick = false;
+        } else {
+          console.log("Tock");
+          tick = true;
+        }
+        times++;
+        if (times == 100) {
+          clearInterval(ctrl);
+          console.log("Acabou a festa");
+        }
+      }
+
+      var ctrl = setInterval(ticker, 1000);
+
+    </script>
+  </head>
+  <body>
+    <h1>Não tem nada de interessante aqui, abra o console, pq é la que a festa está acontecendo.</h1>
+  </body>
+</html>
