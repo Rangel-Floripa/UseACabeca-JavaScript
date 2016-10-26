@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Brain Power</title>
+    <script>
+    // var doneMessage = "Olá pessoal"
+    function handler(){
+      alert(doneMessage);
+    }
+    function makeTimer(doneMessage, n){
+      setTimeout(handler, n);
+    }
+    makeTimer("Cookies are done!", 1000);
+    </script>
+  </head>
+  <body>
+    <h3>O que aconteceria se nosso código tivesse essa aparência:</h3>
+    <p>
+      <code>
+        function handler(){<br>
+          alert(doneMessage);<br>
+        }<br>
+        function makeTimer(doneMessage, n){<br>
+          setTimeout(handler, n);<br>
+        }<br>
+        makeTimer("Cookies are done!", 1000);
+      </code>
+    </p>
+  </body>
+</html>
