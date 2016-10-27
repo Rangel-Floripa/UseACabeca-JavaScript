@@ -1,3 +1,4 @@
+// Dog
 function Dog(name, breed, weight) {
   this.name = name;
   this.breed = breed;
@@ -12,6 +13,7 @@ function Dog(name, breed, weight) {
   };
 }
 
+// Cups of coffee
 function Coffee(roast, ounces) {
   this.roast = roast;
   this.ounces = ounces;
@@ -31,4 +33,38 @@ function Coffee(roast, ounces) {
   this.toString = function() {
     return "You've ordered a ".concat(this.getSize(), " ", roast, " coffee.");
   }
+}
+
+// Cars...
+function Car(make, model, year, color, passengers, convertible, mileage) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.passengers = passengers;
+  this.convertible = convertible;
+  this.mileage = mileage;
+  this.started = false;
+
+  this.start = function() {
+    this.started = true;
+  };
+
+  this.stop = function() {
+    this.started = false;
+  };
+
+  this.drive = function() {
+    if (this.started) {
+      console.log(this.make + " " + this.model + " goes zoom zoom!");
+    } else {
+      console.log("Start the engine first!");
+    }
+  };
+}
+
+// Cats...
+function Cat(name, breed, weight) {
+  this.name = name;
+  this.breed = breed;
+  this.weight = weight;
 }
