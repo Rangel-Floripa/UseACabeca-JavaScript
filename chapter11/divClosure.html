@@ -13,10 +13,18 @@
         var message = "You clicked me ";
         var div = document.getElementById("message");
 
+        function times() {
+          if (count === 1) {
+            return " time!";
+          } else {
+            return " times!"
+          }
+        };
+
         var button = document.getElementById("clickme");
         button.onclick = function() {
           count++;
-          div.innerHTML = message + count + " times!"
+          div.innerHTML = message + count + times();
         }
       };
 
